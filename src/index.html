@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+      <title>Vanilla vuejs</title>
+      <link rel='stylesheet' href='./styles/app.css'/>
+   </head>
+   <body>
+      <div id='vue-instance-one' class='left container'>
+      	<h4 class='heading'>Vue Instance One</h4>
+         <div class="block">
+            <div><h5>Change title of second vuejs istance</h5></div>
+            <input placeholder='Enter part of the day' v-on:keyup.enter='changeTitle(event)' value=''/>
+            <p class='info'>*Press Enter to update title</p>
+         </div>
+      	<div class="block">
+      		<div><h5>Two way data binding and events</h5></div>
+	         <input placeholder='Enter your name' v-model='name'/>
+	         <input placeholder='Enter part of the day' v-on:keyup.enter='updateDay(event)' value=''/>
+	         <p class='info'>*Press Enter to update part of the day.</p>
+	         <p>{{greetMessage()}}</p>
+	      </div>
+         <div class="block">
+         	<div><h5>v-html & v-bind</h5></div>
+         	<div><a v-bind:href='link'>Google</a></div>
+         	<div v-html='linkTag'></div>
+         </div>
+         <div class="block padding-bottom">
+         	<div><h5>Computed Properties</h5></div> <!-- everytime a value changes it will recall all the methods called line {{method()}} -->
+         	<div>Age = {{age}}</div>
+         	<div>A = {{a}}</div>
+         	<div>B = {{b}}</div>
+         	<div>A + AGE = {{ addAToAge }}</div>
+				<div>B + AGE = {{ addBToAge }}</div>
+         	<button v-on:click='a++'>Increament A</button>
+         	<button v-on:click='b++'>Increament B</button>
+         </div>
+         <div v-bind:class='computedClasses'>
+         	<div><h5>Conditional and Dynamic CSS</h5></div>
+         	<button class='fail bold' v-on:click='result("fail")'>Fail</button>
+         	<button class='good bold' v-on:click='result("good")'>Good</button>
+         	<button class='excellent bold' v-on:click='result("excellent")'>Excellent</button>
+         	<p v-if='status=="fail"'>You have failed the test.</p> <!-- if one condition is true the all the below condtions are false-->
+         	<p v-else-if='status=="good"'>You have passed the test with good marks.</p>
+         	<p v-else-if='status=="excellent"'>You have passed the test with excellent marks.</p>
+         </div>
+         <div class="block">
+         	<div><h5>Looping</h5></div>
+         	<ul v-for='(company,index) in companies'>  <!-- try using <template> instead of <ul> -->
+					<li v-for='(value,key) in company'>
+						{{value}}
+					</li>
+				</ul>
+         </div>
+         <component></component>
+      </div>
+
+
+      <div id='vue-instance-two' class='right container'>
+         <h4 class='heading'>Vue Instance Two</h4>
+         <div>{{ title }}</div>
+         <component></component>
+      </div>
+      <script src='../vendor/vue.js'></script>
+      <script src='./scripts/app.js'></script>
+   </body>
+</html>

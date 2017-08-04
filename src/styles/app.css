@@ -1,0 +1,49 @@
+.left{
+	float:left;
+	background-color: #faebd7;
+}
+.right{
+	float:right;
+	background-color: #c3b49f;
+}
+.container{
+	height: 900px;
+	width: 50%;
+	border: 2px solid black;
+	box-sizing: border-box;
+	padding-left: 20px;
+    padding-right: 20px;
+}
+.heading{
+	text-align: center;	
+}
+.info{
+	font-size: 10px;
+    margin-bottom: 0;
+    margin-top: 0px;
+}
+.block{
+	border: 1px solid black;
+	margin-bottom: 20px;
+    padding-left: 10px;
+}
+h5{
+	margin: 0;
+	margin-bottom: 10px;
+	text-align: center;
+}
+.fail{
+	background-color: #f93b3b;
+}
+.good{
+	background-color: #6c6cec;
+}
+.excellent{
+	background-color: #00ad00;
+}
+.bold{
+	font-weight: 700;
+}
+.padding-bottom{
+	padding-bottom: 10px;
+}
